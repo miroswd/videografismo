@@ -1,4 +1,4 @@
-''' Remove ALL CAPS from lines - Capitalize
+''' Remove ALL CAPS from templates - Capitalize
 
 N = 1  ''' Number of Templates
 For T = 1 to N 
