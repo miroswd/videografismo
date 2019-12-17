@@ -1,31 +1,22 @@
-
 '''File Name
 fileName = ActiveCanvas.Scene.SelectedTemplate(0).text
 ActiveCanvas.Scene.Element("media_VIDEO").Element(0).Filename "I:\JH\Movies\SELOS CORRESPONDENTES\" & fileName & ".mov"
 
 
-places = array("NOVA YORK","LONDRES","TÓQUIO","ROMA","PARIS","BARCELONA","WASHINGTON","WASHINGTON-VAI-VIRAR-ZURIQUE","ORLANDO","BUENOS AIRES","MADRI")
+places = array("NOVA YORK","LONDRES","TOQUIO","ROMA","PARIS","BARCELONA","WASHINGTON","WASHINGTON-VAI-VIRAR-ZURIQUE","ORLANDO","BUENOS AIRES","MADRI")
 globeMov = array(702,703,704,705,706,707,708,709,710,711,712) ''' Respectively
 
 For locale = LBound(globeMov) to Ubound(globeMov)
     If places(locale) = fileName then
-    	globeMsg = "00000" & globeMov(locale) & ".lyr"
+        ActiveCanvas.Scene.SelectedTemplate(1).text = "00000" & globeMov(locale) & ".lyr"
+    Else If>
+        msgbox "File not found"
     End If
 Next
 
-ActiveCanvas.Scene.SelectedTemplate(2).text = globeMsg
-msgbox ActiveCanvas.Scene.SelectedTemplate(2).text
-
-
+'''Globe
+globeMsg = ActiveCanvas.Scene.SelectedTemplate(1).text
 
 ActiveCanvas.Selection.Execute("Duet Channel 1")
-Lyric.Open "I:\JH\Messages\GLOBO_CORRESPONDENTES\00000707.lyr"
+Lyric.Open "I:\JH\Messages\GLOBO_CORRESPONDENTES\" & globeMsg
 ActiveCanvas.Scene.Play PlayOutput, PlayWait
-
-'' Index
-a = array(1,2,3)
-for i = lbound(a) to ubound(a)
-if a(i) = 2 then
-  msgbox i
-end if
-next 
