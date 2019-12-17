@@ -9,8 +9,6 @@ globeMov = array(702,703,704,705,706,707,708,709,710,711,712) ''' Respectively
 For locale = LBound(globeMov) to Ubound(globeMov)
     If places(locale) = fileName then
         ActiveCanvas.Scene.SelectedTemplate(1).text = "00000" & globeMov(locale) & ".lyr"
-    Else If>
-        msgbox "File not found"
     End If
 Next
 
