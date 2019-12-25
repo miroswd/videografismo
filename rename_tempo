@@ -8,7 +8,7 @@ For each arg in args
    arte = CStr(mid(arg,InStrRev(arg,"\")+1)) 'Separa o nome do arquivo
    If InStr(arte,".txt") then                'Se a extensão for txt
        num = mid(arte,1,2)                   'Pega os 2 primeiros caracteres
-       If fso.FileExists("D:\Users\altamirs\Desktop\Destino\"& num &"arte.txt") then 
+       If fso.FileExists("URL de Destino"& num &"arte.txt") then 
        '''Se existir o arquivo, soma 1 ao num
            num = num + 1
            If num < 10 then
@@ -16,7 +16,7 @@ For each arg in args
            End if
        End if
 
-       fso.MoveFile arg, "D:\Users\altamirs\Desktop\Destino\"& num &"arte.txt" 'Rename
+       fso.MoveFile arg, "URL de Destino"& num &"arte.txt" 'Rename
    Else
        msgbox "Extensão errada"
    End if
